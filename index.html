@@ -3,39 +3,110 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>シンプルWebサイト</title>
+    <title>SwiftUI はじめて学習サイト</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="card">
-      <div class="header-row">
-        <p class="badge">Simple Site</p>
-        <button id="themeToggle" class="theme-toggle" type="button" aria-label="テーマ切り替え">
-          🌙 ダーク
-        </button>
-      </div>
+    <header class="site-header">
+      <h1>SwiftUI はじめて学習サイト</h1>
+      <p>iPhoneアプリ開発をこれから始める方向けに、SwiftUIの基本をやさしくまとめました。</p>
+      <nav>
+        <a href="#intro">SwiftUIとは</a>
+        <a href="#basics">基本文法</a>
+        <a href="#sample">サンプル</a>
+        <a href="#faq">よくある質問</a>
+        <a href="#contact">問い合わせ</a>
+      </nav>
+    </header>
 
-      <h1 id="greeting">こんにちは、Webページ</h1>
-      <p class="lead">
-        このページは <strong>HTML / CSS / JavaScript</strong> を
-        1ファイルずつ使った、最小構成のサンプルです。
-      </p>
-
-      <section class="status" aria-label="今日の情報">
-        <p class="status-item"><span class="status-label">日付</span><span id="dateText">----/--/--</span></p>
-        <p class="status-item"><span class="status-label">一言</span><span id="dailyTip">---</span></p>
+    <main>
+      <section id="intro" class="card">
+        <h2>SwiftUIとは</h2>
+        <p>
+          SwiftUIは、Appleが提供するUIフレームワークです。宣言的な書き方で、
+          「どんな画面を表示したいか」を短く書けるのが特徴です。
+        </p>
+        <ul>
+          <li>iOS / iPadOS / macOS の画面を作れる</li>
+          <li>プレビューで見た目をすぐ確認できる</li>
+          <li>コードが比較的シンプルで学びやすい</li>
+        </ul>
       </section>
 
-      <section class="widget" aria-label="デモエリア">
-        <p class="clock-label">現在時刻</p>
-        <p id="clock" class="clock" aria-live="polite">--:--:--</p>
+      <section id="basics" class="card">
+        <h2>最初に覚える3つ</h2>
+        <div class="grid">
+          <article>
+            <h3>1. Text</h3>
+            <p>文字を表示する基本ビューです。</p>
+            <pre><code>Text("こんにちは")</code></pre>
+          </article>
+          <article>
+            <h3>2. VStack</h3>
+            <p>ビューを縦に並べます。</p>
+            <pre><code>VStack {
+  Text("上")
+  Text("下")
+}</code></pre>
+          </article>
+          <article>
+            <h3>3. Button</h3>
+            <p>タップできるボタンを作ります。</p>
+            <pre><code>Button("押す") {
+  print("tap")
+}</code></pre>
+          </article>
+        </div>
+      </section>
 
-        <button id="messageButton" class="action" type="button">
-          メッセージを表示
-        </button>
-        <p id="message" class="message" hidden></p>
+      <section id="sample" class="card">
+        <h2>ミニ学習チェック</h2>
+        <p>SwiftUIに関する簡単な問題に答えてみましょう。</p>
+        <p class="question">Q. 画面に文字を表示するために使うビューは？</p>
+        <div class="choices">
+          <button class="choice" data-correct="false">Image</button>
+          <button class="choice" data-correct="true">Text</button>
+          <button class="choice" data-correct="false">Spacer</button>
+        </div>
+        <p id="quizResult" class="result" aria-live="polite"></p>
+      </section>
+
+      <section id="faq" class="card">
+        <h2>よくある質問</h2>
+        <details>
+          <summary>Q. SwiftとSwiftUIは同じですか？</summary>
+          <p>A. Swiftは言語、SwiftUIはUIを作るためのフレームワークです。</p>
+        </details>
+        <details>
+          <summary>Q. まず何から学べば良いですか？</summary>
+          <p>A. Text、VStack、Button、Stateの4つから始めるのがおすすめです。</p>
+        </details>
+      </section>
+
+      <section id="contact" class="card">
+        <h2>問い合わせ（静的デモ）</h2>
+        <p>このフォームは見た目のみの実装です。送信処理は行いません。</p>
+        <form>
+          <label>
+            お名前
+            <input type="text" placeholder="例: 山田 太郎" />
+          </label>
+          <label>
+            メールアドレス
+            <input type="email" placeholder="example@mail.com" />
+          </label>
+          <label>
+            お問い合わせ内容
+            <textarea rows="4" placeholder="ここに入力してください"></textarea>
+          </label>
+          <button type="button">送信（デモ）</button>
+        </form>
       </section>
     </main>
+
+    <footer class="site-footer">
+      <small>© SwiftUI Learning Starter</small>
+    </footer>
 
     <script src="script.js"></script>
   </body>
