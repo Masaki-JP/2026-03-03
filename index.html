@@ -8,12 +8,23 @@
   </head>
   <body>
     <main class="card">
-      <p class="badge">Simple Site</p>
-      <h1>こんにちは、Webページ</h1>
+      <div class="header-row">
+        <p class="badge">Simple Site</p>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="テーマ切り替え">
+          🌙 ダーク
+        </button>
+      </div>
+
+      <h1 id="greeting">こんにちは、Webページ</h1>
       <p class="lead">
         このページは <strong>HTML / CSS / JavaScript</strong> を
         1ファイルずつ使った、最小構成のサンプルです。
       </p>
+
+      <section class="status" aria-label="今日の情報">
+        <p class="status-item"><span class="status-label">日付</span><span id="dateText">----/--/--</span></p>
+        <p class="status-item"><span class="status-label">一言</span><span id="dailyTip">---</span></p>
+      </section>
 
       <section class="widget" aria-label="デモエリア">
         <p class="clock-label">現在時刻</p>
