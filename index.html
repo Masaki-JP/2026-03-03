@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>シンプルWebサイト</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="card">
+      <p class="badge">Simple Site</p>
+      <h1>こんにちは、Webページ</h1>
+      <p class="lead">
+        このページは <strong>HTML / CSS / JavaScript</strong> を
+        1ファイルずつ使った、最小構成のサンプルです。
+      </p>
+
+      <section class="widget" aria-label="デモエリア">
+        <p class="clock-label">現在時刻</p>
+        <p id="clock" class="clock" aria-live="polite">--:--:--</p>
+
+        <button id="messageButton" class="action" type="button">
+          メッセージを表示
+        </button>
+        <p id="message" class="message" hidden></p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
