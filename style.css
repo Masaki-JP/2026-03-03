@@ -5,6 +5,13 @@
   --sub: #4b5563;
   --line: #dbe1ea;
   --accent: #2563eb;
+  --swift-orange: #f05138;
+  --code-bg-1: #0b1220;
+  --code-bg-2: #111827;
+  --code-border: #1f2937;
+  --code-plain: #d1d5db;
+  --code-string: #86efac;
+  --code-func: #93c5fd;
 }
 
 * {
@@ -67,10 +74,30 @@ nav a {
 }
 
 pre {
-  background: #f3f5f9;
-  border-radius: 8px;
-  padding: 10px;
+  background: linear-gradient(160deg, var(--code-bg-1), var(--code-bg-2));
+  border: 1px solid var(--code-border);
+  border-radius: 10px;
+  padding: 12px;
   overflow-x: auto;
+}
+
+pre code {
+  color: var(--code-plain);
+  font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.95rem;
+}
+
+.swift-keyword {
+  color: var(--swift-orange);
+  font-weight: 700;
+}
+
+.swift-string {
+  color: var(--code-string);
+}
+
+.swift-func {
+  color: var(--code-func);
 }
 
 .choices {
