@@ -53,8 +53,8 @@
             <div class="card flow">
               <p>最小形は以下です。`resizable()` を付けるとサイズ変更が可能になります。</p>
               <pre><code><span class="kwd">Image</span>(<span class="str">"profile-photo"</span>)
-  .resizable()
-  .scaledToFit()</code></pre>
+    .resizable()
+    .scaledToFit()</code></pre>
             </div>
             <figure class="figure-wrap">
               <img src="../assets/images/image-scale.svg" alt="scaledToFitとscaledToFillの比較図" />
@@ -75,29 +75,29 @@
               <article class="card flow" data-code-level="basic">
                 <h3>Basic: アバター画像を表示</h3>
                 <pre><code><span class="kwd">Image</span>(<span class="str">"avatar"</span>)
-  .resizable()
-  .scaledToFill()
-  .frame(width: 88, height: 88)
-  .clipShape(Circle())
-  .overlay(Circle().stroke(.white, lineWidth: 3))</code></pre>
+    .resizable()
+    .scaledToFill()
+    .frame(width: 88, height: 88)
+    .clipShape(Circle())
+    .overlay(Circle().stroke(.white, lineWidth: 3))</code></pre>
               </article>
               <article class="card flow" data-code-level="intermediate" hidden>
                 <h3>Intermediate: 画像カードを再利用可能にする</h3>
                 <pre><code><span class="kwd">Image</span>(thumbnail)
-  .resizable()
-  .scaledToFill()
-  .frame(maxWidth: .infinity, minHeight: 180, maxHeight: 220)
-  .clipped()
-  .overlay(alignment: .bottomLeading) {
-    <span class="kwd">Text</span>(category)
-      .font(.caption.bold())
-      .padding(.horizontal, 8)
-      .padding(.vertical, 4)
-      .background(.black.opacity(0.55), in: Capsule())
-      .foregroundStyle(.white)
-      .padding(10)
-  }
-  .clipShape(RoundedRectangle(cornerRadius: 14))</code></pre>
+    .resizable()
+    .scaledToFill()
+    .frame(maxWidth: .infinity, minHeight: 180, maxHeight: 220)
+    .clipped()
+    .overlay(alignment: .bottomLeading) {
+        <span class="kwd">Text</span>(category)
+            .font(.caption.bold())
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .background(.black.opacity(0.55), in: Capsule())
+            .foregroundStyle(.white)
+            .padding(10)
+    }
+    .clipShape(RoundedRectangle(cornerRadius: 14))</code></pre>
               </article>
             </div>
           </section>

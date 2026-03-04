@@ -45,8 +45,8 @@
             </div>
             <div class="card flow">
               <pre><code><span class="kwd">VStack</span> {
-  <span class="kwd">Text</span>(<span class="str">"上"</span>)
-  <span class="kwd">Text</span>(<span class="str">"下"</span>)
+    <span class="kwd">Text</span>(<span class="str">"上"</span>)
+    <span class="kwd">Text</span>(<span class="str">"下"</span>)
 }</code></pre>
               <p class="text-muted">`spacing` を指定しない場合はデフォルト値で並びます。</p>
             </div>
@@ -64,22 +64,22 @@
               <article class="card flow" data-code-level="basic">
                 <h3>Basic: プロフィールカード</h3>
                 <pre><code><span class="kwd">VStack</span>(alignment: .leading, spacing: 8) {
-  <span class="kwd">Text</span>(<span class="str">"鈴木 一郎"</span>).font(.headline)
-  <span class="kwd">Text</span>(<span class="str">"iOS Learner"</span>).foregroundStyle(.secondary)
-  <span class="kwd">Text</span>(<span class="str">"Text / VStack / padding を学習中"</span>)
-    .font(.footnote)
+    <span class="kwd">Text</span>(<span class="str">"鈴木 一郎"</span>).font(.headline)
+    <span class="kwd">Text</span>(<span class="str">"iOS Learner"</span>).foregroundStyle(.secondary)
+    <span class="kwd">Text</span>(<span class="str">"Text / VStack / padding を学習中"</span>)
+        .font(.footnote)
 }
 .padding(16)</code></pre>
               </article>
               <article class="card flow" data-code-level="intermediate" hidden>
                 <h3>Intermediate: セクションをネストして整理</h3>
                 <pre><code><span class="kwd">VStack</span>(alignment: .leading, spacing: 14) {
-  header
-  <span class="kwd">VStack</span>(alignment: .leading, spacing: 8) {
-    statusRow
-    summary
-  }
-  footerActions
+    header
+    <span class="kwd">VStack</span>(alignment: .leading, spacing: 8) {
+        statusRow
+        summary
+    }
+    footerActions
 }
 .frame(maxWidth: .infinity, alignment: .leading)
 .padding(18)

@@ -45,11 +45,11 @@
             </div>
             <div class="card flow">
               <pre><code><span class="kwd">Text</span>(<span class="str">"通知"</span>)
-  .padding(12)
-  .background(.blue.opacity(0.15), in: Capsule())
-  .overlay(
-    Capsule().stroke(.blue, lineWidth: 1)
-  )</code></pre>
+    .padding(12)
+    .background(.blue.opacity(0.15), in: Capsule())
+    .overlay(
+        Capsule().stroke(.blue, lineWidth: 1)
+    )</code></pre>
               <p class="text-muted">ベースビューの上に別ビューを重ねるのがoverlayです。</p>
             </div>
             <figure class="figure-wrap">
@@ -70,40 +70,40 @@
               <article class="card flow" data-code-level="basic">
                 <h3>Basic: 画像にラベルを重ねる</h3>
                 <pre><code><span class="kwd">Image</span>(<span class="str">"course-card"</span>)
-  .resizable()
-  .scaledToFill()
-  .frame(height: 180)
-  .clipped()
-  .overlay(alignment: .bottomLeading) {
-    <span class="kwd">Text</span>(<span class="str">"UI設計"</span>)
-      .font(.caption.bold())
-      .padding(8)
-      .background(.black.opacity(0.5), in: Capsule())
-      .foregroundStyle(.white)
-      .padding(10)
-  }</code></pre>
+    .resizable()
+    .scaledToFill()
+    .frame(height: 180)
+    .clipped()
+    .overlay(alignment: .bottomLeading) {
+        <span class="kwd">Text</span>(<span class="str">"UI設計"</span>)
+            .font(.caption.bold())
+            .padding(8)
+            .background(.black.opacity(0.5), in: Capsule())
+            .foregroundStyle(.white)
+            .padding(10)
+    }</code></pre>
               </article>
               <article class="card flow" data-code-level="intermediate" hidden>
                 <h3>Intermediate: 複数バッジを重ねる</h3>
                 <pre><code><span class="kwd">RoundedRectangle</span>(cornerRadius: 16)
-  .fill(.white)
-  .frame(height: 190)
-  .overlay(alignment: .topTrailing) {
-    <span class="kwd">Text</span>(<span class="str">"NEW"</span>)
-      .font(.caption2.bold())
-      .padding(.horizontal, 8)
-      .padding(.vertical, 5)
-      .background(.orange, in: Capsule())
-      .padding(10)
-  }
-  .overlay(alignment: .bottomLeading) {
-    <span class="kwd">Text</span>(<span class="str">"更新: 3月"</span>)
-      .font(.caption)
-      .padding(.horizontal, 10)
-      .padding(.vertical, 6)
-      .background(.thinMaterial, in: Capsule())
-      .padding(10)
-  }</code></pre>
+    .fill(.white)
+    .frame(height: 190)
+    .overlay(alignment: .topTrailing) {
+        <span class="kwd">Text</span>(<span class="str">"NEW"</span>)
+            .font(.caption2.bold())
+            .padding(.horizontal, 8)
+            .padding(.vertical, 5)
+            .background(.orange, in: Capsule())
+            .padding(10)
+    }
+    .overlay(alignment: .bottomLeading) {
+        <span class="kwd">Text</span>(<span class="str">"更新: 3月"</span>)
+            .font(.caption)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 6)
+            .background(.thinMaterial, in: Capsule())
+            .padding(10)
+    }</code></pre>
               </article>
             </div>
           </section>
