@@ -44,15 +44,15 @@
               <article class="card flow">
                 <h3>HStack</h3>
                 <pre><code><span class="kwd">HStack</span> {
-  icon
-  <span class="kwd">Text</span>(title)
+    icon
+    <span class="kwd">Text</span>(title)
 }</code></pre>
               </article>
               <article class="card flow">
                 <h3>ZStack</h3>
                 <pre><code><span class="kwd">ZStack</span> {
-  background
-  content
+    background
+    content
 }</code></pre>
               </article>
             </div>
@@ -67,10 +67,10 @@
               <article class="card flow" data-code-level="basic">
                 <h3>Basic: アイコン付き横並びメニュー</h3>
                 <pre><code><span class="kwd">HStack</span>(spacing: 10) {
-  <span class="kwd">Image</span>(systemName: <span class="str">"book.fill"</span>)
-  <span class="kwd">Text</span>(<span class="str">"学習履歴"</span>)
-  <span class="kwd">Spacer</span>()
-  <span class="kwd">Image</span>(systemName: <span class="str">"chevron.right"</span>)
+    <span class="kwd">Image</span>(systemName: <span class="str">"book.fill"</span>)
+    <span class="kwd">Text</span>(<span class="str">"学習履歴"</span>)
+    <span class="kwd">Spacer</span>()
+    <span class="kwd">Image</span>(systemName: <span class="str">"chevron.right"</span>)
 }
 .padding(14)
 .background(.white, in: RoundedRectangle(cornerRadius: 12))</code></pre>
@@ -78,17 +78,17 @@
               <article class="card flow" data-code-level="intermediate" hidden>
                 <h3>Intermediate: ZStackで背景と内容を分離</h3>
                 <pre><code><span class="kwd">ZStack</span>(alignment: .bottomLeading) {
-  <span class="kwd">LinearGradient</span>(
-    colors: [.teal.opacity(0.7), .blue.opacity(0.5)],
-    startPoint: .topLeading,
-    endPoint: .bottomTrailing
-  )
+    <span class="kwd">LinearGradient</span>(
+        colors: [.teal.opacity(0.7), .blue.opacity(0.5)],
+        startPoint: .topLeading,
+        endPoint: .bottomTrailing
+    )
 
-  <span class="kwd">VStack</span>(alignment: .leading, spacing: 8) {
-    <span class="kwd">Text</span>(title).font(.headline)
-    <span class="kwd">Text</span>(subtitle).font(.subheadline)
-  }
-  .padding(16)
+    <span class="kwd">VStack</span>(alignment: .leading, spacing: 8) {
+        <span class="kwd">Text</span>(title).font(.headline)
+        <span class="kwd">Text</span>(subtitle).font(.subheadline)
+    }
+    .padding(16)
 }
 .frame(height: 180)
 .clipShape(RoundedRectangle(cornerRadius: 16))</code></pre>

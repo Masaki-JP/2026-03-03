@@ -42,9 +42,9 @@
             <div class="section-title"><h2>1. 基本文法（最小コード）</h2><span class="badge">Basic</span></div>
             <div class="card flow">
               <pre><code><span class="kwd">HStack</span> {
-  <span class="kwd">Text</span>(<span class="str">"左"</span>)
-  <span class="kwd">Spacer</span>()
-  <span class="kwd">Text</span>(<span class="str">"右"</span>)
+    <span class="kwd">Text</span>(<span class="str">"左"</span>)
+    <span class="kwd">Spacer</span>()
+    <span class="kwd">Text</span>(<span class="str">"右"</span>)
 }</code></pre>
             </div>
           </section>
@@ -58,20 +58,20 @@
               <article class="card flow" data-code-level="basic">
                 <h3>Basic: タイトルと日時を左右配置</h3>
                 <pre><code><span class="kwd">HStack</span> {
-  <span class="kwd">Text</span>(<span class="str">"UIレビュー"</span>)
-    .font(.headline)
-  <span class="kwd">Spacer</span>()
-  <span class="kwd">Text</span>(<span class="str">"18:30"</span>)
-    .font(.subheadline)
-    .foregroundStyle(.secondary)
+    <span class="kwd">Text</span>(<span class="str">"UIレビュー"</span>)
+        .font(.headline)
+    <span class="kwd">Spacer</span>()
+    <span class="kwd">Text</span>(<span class="str">"18:30"</span>)
+        .font(.subheadline)
+        .foregroundStyle(.secondary)
 }
 .padding(.horizontal, 16)</code></pre>
               </article>
               <article class="card flow" data-code-level="intermediate" hidden>
                 <h3>Intermediate: frameで幅と揃えを統一</h3>
                 <pre><code><span class="kwd">VStack</span>(spacing: 12) {
-  row(title: <span class="str">"Text"</span>, score: 82)
-  row(title: <span class="str">"overlay"</span>, score: 76)
+    row(title: <span class="str">"Text"</span>, score: 82)
+    row(title: <span class="str">"overlay"</span>, score: 76)
 }
 .frame(maxWidth: .infinity, alignment: .leading)
 .padding(16)
