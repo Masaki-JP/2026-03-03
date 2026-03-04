@@ -160,7 +160,7 @@ main {
     gap: 16px;
   }
 
-  .menu-toggle {
+  body.js-enabled .menu-toggle {
     display: none;
   }
 

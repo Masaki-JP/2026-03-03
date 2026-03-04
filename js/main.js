@@ -28,6 +28,8 @@
   const menuToggle = document.querySelector("[data-menu-toggle]");
   const menuPanel = document.querySelector("[data-menu-panel]");
   if (menuToggle && menuPanel) {
+    const desktopMediaQuery = window.matchMedia("(min-width: 48rem)");
+
     const closeMenu = () => {
       body.classList.remove("menu-open");
       menuToggle.setAttribute("aria-expanded", "false");
@@ -47,6 +49,20 @@
         closeMenu();
       }
     });
+
+    const syncMenuState = (event) => {
+      if (event.matches) {
+        closeMenu();
+      }
+    };
+
+    syncMenuState(desktopMediaQuery);
+
+    if (typeof desktopMediaQuery.addEventListener === "function") {
+      desktopMediaQuery.addEventListener("change", syncMenuState);
+    } else {
+      desktopMediaQuery.addListener(syncMenuState);
+    }
   }
 
   const tocLinks = [...document.querySelectorAll("[data-toc-link]")];
