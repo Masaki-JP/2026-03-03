@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>学習ロードマップ | SwiftUI Layout Lab</title>
+    <meta
+      name="description"
+      content="初心者から中級者へ進むSwiftUIレイアウト学習ロードマップ。学習順・到達目標・チェック項目を整理。"
+    />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
+    <script src="../js/main.js" defer></script>
+    <script src="../js/code-switcher.js" defer></script>
+    <script src="../js/glossary-filter.js" defer></script>
+  </head>
+  <body data-page="roadmap">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html">SwiftUI Layout Lab</a>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="global-nav">
+          メニュー
+        </button>
+        <nav class="site-nav" aria-label="主要ナビゲーション">
+          <ul id="global-nav" class="site-nav-list" data-menu-panel>
+            <li><a href="../index.html" data-nav-link="home">ホーム</a></li>
+            <li><a href="roadmap.html" data-nav-link="roadmap">学習ロードマップ</a></li>
+            <li><a href="roadmap.html#lesson-list" data-nav-link="lessons">レッスン一覧</a></li>
+            <li><a href="glossary.html" data-nav-link="glossary">用語集</a></li>
+            <li><a href="faq.html" data-nav-link="faq">FAQ</a></li>
+            <li><a href="text.html" class="nav-cta" data-nav-link="start">学習を始める</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container flow">
+        <section class="panel lesson-header fade-up">
+          <span class="badge">Roadmap</span>
+          <h1>初心者から中級者へ進む学習ロードマップ</h1>
+          <p>
+            12ページの中で、どの順番で進めると理解が積み上がるかを示します。
+            各ステップに「できるようになること」を明記しているため、自分の現在地を確認しながら学習できます。
+          </p>
+        </section>
+
+        <section class="panel fade-up anchor-target" id="lesson-list">
+          <div class="section-title">
+            <h2>推奨学習順</h2>
+            <span class="badge">7ステップ</span>
+          </div>
+          <div class="roadmap-track">
+            <article class="card flow">
+              <h3>Step 1. Text</h3>
+              <p>文字の表示・フォント・行数制御を理解し、情報階層を作る。</p>
+              <a href="text.html">Textページへ</a>
+            </article>
+            <article class="card flow">
+              <h3>Step 2. VStack</h3>
+              <p>縦積みレイアウトの基本を身につけ、読みやすい構造を作る。</p>
+              <a href="vstack.html">VStackページへ</a>
+            </article>
+            <article class="card flow">
+              <h3>Step 3. padding</h3>
+              <p>余白の設計で視認性を改善し、密度をコントロールする。</p>
+              <a href="padding.html">paddingページへ</a>
+            </article>
+            <article class="card flow">
+              <h3>Step 4. overlay</h3>
+              <p>重ね表示とalignmentで、カードUIに補助情報を追加する。</p>
+              <a href="overlay.html">overlayページへ</a>
+            </article>
+            <article class="card flow">
+              <h3>Step 5. Image</h3>
+              <p>画像のスケール/クリップ/角丸を理解して品質を揃える。</p>
+              <a href="image.html">Imageページへ</a>
+            </article>
+            <article class="card flow">
+              <h3>Step 6. Stacks + Spacer/Frame</h3>
+              <p>複合レイアウトを組み、可変幅でも破綻しない構造を作る。</p>
+              <a href="stacks.html">Stacksページへ</a>
+            </article>
+            <article class="card flow">
+              <h3>Step 7. Button</h3>
+              <p>UI操作要素の見た目とタップ領域を設計し、実装を仕上げる。</p>
+              <a href="button.html">Buttonページへ</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel fade-up">
+          <div class="section-title">
+            <h2>到達目標</h2>
+            <span class="badge">チェックリスト</span>
+          </div>
+          <div class="two-col">
+            <article class="card flow">
+              <h3>初心者卒業の目安</h3>
+              <ul class="checklist">
+                <li>TextとImageの表示崩れを自力で修正できる</li>
+                <li>VStackとpaddingで読みやすい画面を作れる</li>
+                <li>overlayのalignmentを指定してバッジを重ねられる</li>
+              </ul>
+            </article>
+            <article class="card flow">
+              <h3>中級入口の目安</h3>
+              <ul class="checklist">
+                <li>HStack/ZStack/Spacer/frameを状況に応じて選べる</li>
+                <li>Buttonのスタイルを再利用可能な形で分離できる</li>
+                <li>同じUIをBasic/Intermediateの2通りで説明できる</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel fade-up flow">
+          <div class="section-title">
+            <h2>次に進む</h2>
+            <span class="badge">Start</span>
+          </div>
+          <p>ロードマップに沿って最初のページから始める場合は、Textページを開いてください。</p>
+          <a class="button-primary" href="text.html">Textページへ進む</a>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container flow">
+        <small>© SwiftUI Layout Lab</small>
+        <div class="footer-links">
+          <a href="../index.html">ホーム</a>
+          <a href="glossary.html">用語集</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

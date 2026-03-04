@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VStack解説 | SwiftUI Layout Lab</title>
+    <meta name="description" content="SwiftUI VStackの基礎から中級入口まで。alignment、spacing、ネスト設計を解説。" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
+    <script src="../js/main.js" defer></script>
+    <script src="../js/code-switcher.js" defer></script>
+    <script src="../js/glossary-filter.js" defer></script>
+  </head>
+  <body data-page="vstack">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html">SwiftUI Layout Lab</a>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="global-nav">メニュー</button>
+        <nav class="site-nav" aria-label="主要ナビゲーション">
+          <ul id="global-nav" class="site-nav-list" data-menu-panel>
+            <li><a href="../index.html" data-nav-link="home">ホーム</a></li>
+            <li><a href="roadmap.html" data-nav-link="roadmap">学習ロードマップ</a></li>
+            <li><a href="roadmap.html#lesson-list" data-nav-link="lessons">レッスン一覧</a></li>
+            <li><a href="glossary.html" data-nav-link="glossary">用語集</a></li>
+            <li><a href="faq.html" data-nav-link="faq">FAQ</a></li>
+            <li><a href="text.html" class="nav-cta" data-nav-link="start">学習を始める</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="container lesson-shell">
+        <article class="lesson-main">
+          <section class="panel lesson-header fade-up" id="lesson-intro">
+            <span class="badge">VStack</span>
+            <h1>VStackで縦方向の情報構造を作る</h1>
+            <p>VStackは多くの画面の骨格です。spacingとalignmentを適切に設定すれば、情報量が増えても読みやすさを維持できます。</p>
+          </section>
+          <section class="panel lesson-section fade-up" id="basic-syntax">
+            <div class="section-title">
+              <h2>1. 基本文法（最小コード）</h2>
+              <span class="badge">Basic</span>
+            </div>
+            <div class="card flow">
+              <pre><code><span class="kwd">VStack</span> {
+  <span class="kwd">Text</span>(<span class="str">"上"</span>)
+  <span class="kwd">Text</span>(<span class="str">"下"</span>)
+}</code></pre>
+              <p class="text-muted">`spacing` を指定しない場合はデフォルト値で並びます。</p>
+            </div>
+          </section>
+          <section class="panel lesson-section fade-up" id="complete-sample">
+            <div class="section-title">
+              <h2>2. 完成コード例（初心者向け）</h2>
+              <span class="badge">Code Lab</span>
+            </div>
+            <div class="code-lab">
+              <div class="code-switch" role="group" aria-label="VStackのコードレベル切替">
+                <button type="button" data-code-switch="basic">Basic</button>
+                <button type="button" data-code-switch="intermediate">Intermediate</button>
+              </div>
+              <article class="card flow" data-code-level="basic">
+                <h3>Basic: プロフィールカード</h3>
+                <pre><code><span class="kwd">VStack</span>(alignment: .leading, spacing: 8) {
+  <span class="kwd">Text</span>(<span class="str">"鈴木 一郎"</span>).font(.headline)
+  <span class="kwd">Text</span>(<span class="str">"iOS Learner"</span>).foregroundStyle(.secondary)
+  <span class="kwd">Text</span>(<span class="str">"Text / VStack / padding を学習中"</span>)
+    .font(.footnote)
+}
+.padding(16)</code></pre>
+              </article>
+              <article class="card flow" data-code-level="intermediate" hidden>
+                <h3>Intermediate: セクションをネストして整理</h3>
+                <pre><code><span class="kwd">VStack</span>(alignment: .leading, spacing: 14) {
+  header
+  <span class="kwd">VStack</span>(alignment: .leading, spacing: 8) {
+    statusRow
+    summary
+  }
+  footerActions
+}
+.frame(maxWidth: .infinity, alignment: .leading)
+.padding(18)
+.background(.white, in: RoundedRectangle(cornerRadius: 16))</code></pre>
+              </article>
+            </div>
+          </section>
+          <section class="panel lesson-section fade-up" id="intermediate-step">
+            <div class="section-title">
+              <h2>3. 発展コードの読み方（中級入口）</h2>
+              <span class="badge">ポイント</span>
+            </div>
+            <div class="two-col">
+              <article class="card flow">
+                <h3>alignmentを先に決める</h3>
+                <p>先に`leading`/`center`を決めると、子ビューの調整が減ります。</p>
+              </article>
+              <article class="card flow">
+                <h3>段落ごとにVStackを分割</h3>
+                <p>意味のまとまり単位でネストすると、再利用と保守が楽になります。</p>
+              </article>
+            </div>
+          </section>
+          <section class="panel lesson-section fade-up" id="pitfalls">
+            <div class="section-title">
+              <h2>4. つまずきやすいポイント</h2>
+              <span class="badge">アンチパターン</span>
+            </div>
+            <ul class="warning-list">
+              <li>VStackに要素を詰め込みすぎて責務が曖昧になる。</li>
+              <li>spacingを0にしすぎて可読性が落ちる。</li>
+              <li>alignment未指定のまま個別Textで整列を調整してしまう。</li>
+            </ul>
+          </section>
+          <section class="panel lesson-section fade-up" id="checklist">
+            <div class="section-title">
+              <h2>5. まとめチェックリスト</h2>
+              <span class="badge">確認</span>
+            </div>
+            <ul class="checklist">
+              <li>VStackのalignment/spacingを用途で使い分けられる。</li>
+              <li>意味単位でネストして構造化できる。</li>
+              <li>frame/paddingとの組み合わせを説明できる。</li>
+            </ul>
+          </section>
+          <section class="panel lesson-section fade-up" id="next">
+            <div class="section-title">
+              <h2>6. 次のページ</h2>
+              <span class="badge">Prev / Next</span>
+            </div>
+            <nav class="lesson-nav" aria-label="前後ページ">
+              <a href="text.html"><strong>← Text</strong><span class="text-muted">文字設計に戻る</span></a>
+              <a href="padding.html"><strong>padding →</strong><span class="text-muted">余白設計へ進む</span></a>
+            </nav>
+          </section>
+        </article>
+        <aside class="lesson-toc">
+          <nav class="toc" aria-label="このページの目次">
+            <h2>目次</h2>
+            <ul>
+              <li><a href="#lesson-intro" data-toc-link>導入</a></li>
+              <li><a href="#basic-syntax" data-toc-link>基本文法</a></li>
+              <li><a href="#complete-sample" data-toc-link>完成コード</a></li>
+              <li><a href="#intermediate-step" data-toc-link>発展ポイント</a></li>
+              <li><a href="#pitfalls" data-toc-link>つまずき</a></li>
+              <li><a href="#checklist" data-toc-link>まとめ</a></li>
+              <li><a href="#next" data-toc-link>次ページ</a></li>
+            </ul>
+          </nav>
+        </aside>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container flow"><small>© SwiftUI Layout Lab</small></div>
+    </footer>
+  </body>
+</html>
