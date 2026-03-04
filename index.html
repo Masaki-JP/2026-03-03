@@ -3,111 +3,206 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SwiftUI はじめて学習サイト</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>SwiftUI Layout Lab | 初心者から中級者へ</title>
+    <meta
+      name="description"
+      content="SwiftUIのText・Image・padding・overlay・VStackを軸に、初心者から中級者へ段階的に学ぶ学習サイト。"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <script src="js/main.js" defer></script>
+    <script src="js/code-switcher.js" defer></script>
+    <script src="js/glossary-filter.js" defer></script>
   </head>
-  <body>
+  <body data-page="home">
     <header class="site-header">
-      <h1>SwiftUI はじめて学習サイト</h1>
-      <p>iPhoneアプリ開発をこれから始める方向けに、SwiftUIの基本をやさしくまとめました。</p>
-      <nav>
-        <a href="#intro">SwiftUIとは</a>
-        <a href="#basics">基本文法</a>
-        <a href="#sample">サンプル</a>
-        <a href="#faq">よくある質問</a>
-        <a href="#contact">問い合わせ</a>
-      </nav>
+      <div class="container header-inner">
+        <a class="brand" href="index.html">SwiftUI Layout Lab</a>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="global-nav">
+          メニュー
+        </button>
+        <nav class="site-nav" aria-label="主要ナビゲーション">
+          <ul id="global-nav" class="site-nav-list" data-menu-panel>
+            <li><a href="index.html" data-nav-link="home">ホーム</a></li>
+            <li><a href="pages/roadmap.html" data-nav-link="roadmap">学習ロードマップ</a></li>
+            <li><a href="pages/roadmap.html#lesson-list" data-nav-link="lessons">レッスン一覧</a></li>
+            <li><a href="pages/glossary.html" data-nav-link="glossary">用語集</a></li>
+            <li><a href="pages/faq.html" data-nav-link="faq">FAQ</a></li>
+            <li><a href="pages/text.html" class="nav-cta" data-nav-link="start">学習を始める</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main>
-      <section id="intro" class="card">
-        <h2>SwiftUIとは</h2>
-        <p>
-          SwiftUIは、Appleが提供するUIフレームワークです。宣言的な書き方で、
-          「どんな画面を表示したいか」を短く書けるのが特徴です。
-        </p>
-        <ul>
-          <li>iOS / iPadOS / macOS の画面を作れる</li>
-          <li>プレビューで見た目をすぐ確認できる</li>
-          <li>コードが比較的シンプルで学びやすい</li>
-        </ul>
-      </section>
+      <div class="container flow">
+        <section class="panel hero fade-up">
+          <div class="hero-copy">
+            <span class="badge">Beginner to Intermediate</span>
+            <h1>SwiftUIレイアウトを実装レベルで学ぶ</h1>
+            <p>
+              これまでの入門サイトを、初心者から中級者へ進むための学習ポータルに再設計しました。
+              Text・Image・padding・overlay・VStackを起点に、画面構築でつまずかないための実践知識まで整理しています。
+            </p>
+            <ul class="pill-list">
+              <li>学習導線つきの12ページ構成</li>
+              <li>完成コード + 発展コードの比較</li>
+              <li>モバイル/タブレット/デスクトップ対応</li>
+            </ul>
+            <div class="hero-actions">
+              <a class="button-primary" href="pages/roadmap.html">学習ロードマップを見る</a>
+              <a class="button-ghost" href="#basics">旧リンク互換セクションへ</a>
+            </div>
+          </div>
+          <figure class="hero-visual">
+            <img src="assets/images/ui-layer.svg" alt="SwiftUIのレイヤー構造イメージ" />
+            <figcaption>UIを分解して理解すると、VStackやoverlayの使い分けが早くなります。</figcaption>
+          </figure>
+        </section>
 
-      <section id="basics" class="card">
-        <h2>最初に覚える3つ</h2>
-        <div class="grid">
-          <article>
-            <h3>1. Text</h3>
-            <p>文字を表示する基本ビューです。</p>
-            <pre><code><span class="swift-keyword">Text</span>(<span class="swift-string">"こんにちは"</span>)</code></pre>
-          </article>
-          <article>
-            <h3>2. VStack</h3>
-            <p>ビューを縦に並べます。</p>
-            <pre><code><span class="swift-keyword">VStack</span> {
-  <span class="swift-keyword">Text</span>(<span class="swift-string">"上"</span>)
-  <span class="swift-keyword">Text</span>(<span class="swift-string">"下"</span>)
-}</code></pre>
-          </article>
-          <article>
-            <h3>3. Button</h3>
-            <p>タップできるボタンを作ります。</p>
-            <pre><code><span class="swift-keyword">Button</span>(<span class="swift-string">"押す"</span>) {
-  <span class="swift-func">print</span>(<span class="swift-string">"tap"</span>)
-}</code></pre>
-          </article>
-        </div>
-      </section>
+        <section class="panel fade-up">
+          <div class="section-title">
+            <h2>学習レベル設計</h2>
+            <span class="badge">3段階</span>
+          </div>
+          <div class="level-bands">
+            <article class="card flow">
+              <h3>Step 1: 基本表示を理解する</h3>
+              <p class="text-muted">Text・Image・VStackで「表示・配置・整列」の土台を固めます。</p>
+            </article>
+            <article class="card flow">
+              <h3>Step 2: 見た目を制御する</h3>
+              <p class="text-muted">padding・overlay・frameで余白と重なりの設計を学びます。</p>
+            </article>
+            <article class="card flow">
+              <h3>Step 3: 再利用しやすく組む</h3>
+              <p class="text-muted">Stacks・Spacer/Frame・Buttonを組み合わせ、実装を整理します。</p>
+            </article>
+          </div>
+        </section>
 
-      <section id="sample" class="card">
-        <h2>ミニ学習チェック</h2>
-        <p>SwiftUIに関する簡単な問題に答えてみましょう。</p>
-        <p class="question">Q. 画面に文字を表示するために使うビューは？</p>
-        <div class="choices">
-          <button class="choice" data-correct="false">Image</button>
-          <button class="choice" data-correct="true">Text</button>
-          <button class="choice" data-correct="false">Spacer</button>
-        </div>
-        <p id="quizResult" class="result" aria-live="polite"></p>
-      </section>
+        <section class="panel fade-up" id="basics">
+          <div class="section-title">
+            <h2>主要トピック</h2>
+            <span class="badge">各ページで詳細解説</span>
+          </div>
+          <div class="topic-list">
+            <article class="card">
+              <h3>Text</h3>
+              <p>文字表示からフォント設計、複数行制御まで。</p>
+              <a class="inline-link-card" href="pages/text.html">Textを学ぶ</a>
+            </article>
+            <article class="card">
+              <h3>Image</h3>
+              <p>アスペクト比・トリミング・装飾の違いを整理。</p>
+              <a class="inline-link-card" href="pages/image.html">Imageを学ぶ</a>
+            </article>
+            <article class="card">
+              <h3>padding</h3>
+              <p>余白を設計して、読みやすいUIの密度を作る。</p>
+              <a class="inline-link-card" href="pages/padding.html">paddingを学ぶ</a>
+            </article>
+            <article class="card">
+              <h3>overlay</h3>
+              <p>重ね表示とalignmentを使ったラベル/バッジ実装。</p>
+              <a class="inline-link-card" href="pages/overlay.html">overlayを学ぶ</a>
+            </article>
+            <article class="card">
+              <h3>VStack</h3>
+              <p>縦方向レイアウトの基本と spacing/alignment 設計。</p>
+              <a class="inline-link-card" href="pages/vstack.html">VStackを学ぶ</a>
+            </article>
+            <article class="card">
+              <h3>中級入口</h3>
+              <p>Stacks、Spacer/Frame、Buttonで再利用しやすい画面設計へ。</p>
+              <a class="inline-link-card" href="pages/stacks.html">追加トピックへ</a>
+            </article>
+          </div>
+        </section>
 
-      <section id="faq" class="card">
-        <h2>よくある質問</h2>
-        <details>
-          <summary>Q. SwiftとSwiftUIは同じですか？</summary>
-          <p>A. Swiftは言語、SwiftUIはUIを作るためのフレームワークです。</p>
-        </details>
-        <details>
-          <summary>Q. まず何から学べば良いですか？</summary>
-          <p>A. Text、VStack、Button、Stateの4つから始めるのがおすすめです。</p>
-        </details>
-      </section>
+        <section class="panel fade-up anchor-target" id="intro">
+          <div class="section-title">
+            <h2>SwiftUIとは（旧リンク互換）</h2>
+            <span class="badge">#intro</span>
+          </div>
+          <p>
+            SwiftUIは、Appleプラットフォーム向けの宣言的UIフレームワークです。
+            初心者にとっては「何を表示したいか」を素直に書ける点が学習しやすく、
+            中級者にとってはコンポーネント分割や状態管理への接続がしやすい点が強みです。
+          </p>
+        </section>
 
-      <section id="contact" class="card">
-        <h2>問い合わせ（静的デモ）</h2>
-        <p>このフォームは見た目のみの実装です。送信処理は行いません。</p>
-        <form>
-          <label>
-            お名前
-            <input type="text" placeholder="例: 山田 太郎" />
-          </label>
-          <label>
-            メールアドレス
-            <input type="email" placeholder="example@mail.com" />
-          </label>
-          <label>
-            お問い合わせ内容
-            <textarea rows="4" placeholder="ここに入力してください"></textarea>
-          </label>
-          <button type="button">送信（デモ）</button>
-        </form>
-      </section>
+        <section class="panel fade-up anchor-target" id="sample">
+          <div class="section-title">
+            <h2>ミニ学習チェック（旧リンク互換）</h2>
+            <span class="badge">#sample</span>
+          </div>
+          <div class="quiz-box">
+            <p>Q. ベースのビューの上に別ビューを重ねるmodifierはどれですか？</p>
+            <div class="quiz-options">
+              <button type="button" data-quiz-choice data-correct="false">padding</button>
+              <button type="button" data-quiz-choice data-correct="true">overlay</button>
+              <button type="button" data-quiz-choice data-correct="false">frame</button>
+            </div>
+            <p class="quiz-result" data-quiz-result aria-live="polite"></p>
+            <a href="pages/overlay.html">詳細な解説ページへ進む</a>
+          </div>
+        </section>
+
+        <section class="panel fade-up anchor-target" id="faq">
+          <div class="section-title">
+            <h2>よくある質問（旧リンク互換）</h2>
+            <span class="badge">#faq</span>
+          </div>
+          <details>
+            <summary>初心者ですが、中級者向けページまで読んでも大丈夫ですか？</summary>
+            <p>大丈夫です。各ページにBasic/Intermediate切替を用意しているので、Basicだけでも学習できます。</p>
+          </details>
+          <details>
+            <summary>どの順番で読むべきですか？</summary>
+            <p>
+              <a href="pages/roadmap.html">ロードマップ</a>の順に、
+              Text → VStack → padding → overlay → Image → 発展トピック の順を推奨します。
+            </p>
+          </details>
+          <p><a href="pages/faq.html">FAQページで全項目を見る</a></p>
+        </section>
+
+        <section class="panel fade-up anchor-target" id="contact">
+          <div class="section-title">
+            <h2>問い合わせ（静的デモ・旧リンク互換）</h2>
+            <span class="badge">#contact</span>
+          </div>
+          <form>
+            <label>
+              お名前
+              <input type="text" placeholder="例: 山田 花子" />
+            </label>
+            <label>
+              メールアドレス
+              <input type="email" placeholder="you@example.com" />
+            </label>
+            <label>
+              メッセージ
+              <textarea rows="4" placeholder="ご意見・ご要望"></textarea>
+            </label>
+            <button class="button-primary" type="button">送信（デモ）</button>
+          </form>
+        </section>
+      </div>
     </main>
 
     <footer class="site-footer">
-      <small>© SwiftUI Learning Starter</small>
+      <div class="container flow">
+        <small>© SwiftUI Layout Lab</small>
+        <div class="footer-links">
+          <a href="pages/roadmap.html">学習ロードマップ</a>
+          <a href="pages/glossary.html">用語集</a>
+          <a href="pages/faq.html">FAQ</a>
+        </div>
+      </div>
     </footer>
-
-    <script src="script.js"></script>
   </body>
 </html>

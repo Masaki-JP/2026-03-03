@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text解説 | SwiftUI Layout Lab</title>
+    <meta name="description" content="SwiftUI Textの基本から中級入口まで。フォント、行数、装飾、情報階層の作り方を解説。" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
+    <script src="../js/main.js" defer></script>
+    <script src="../js/code-switcher.js" defer></script>
+    <script src="../js/glossary-filter.js" defer></script>
+  </head>
+  <body data-page="text">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html">SwiftUI Layout Lab</a>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="global-nav">
+          メニュー
+        </button>
+        <nav class="site-nav" aria-label="主要ナビゲーション">
+          <ul id="global-nav" class="site-nav-list" data-menu-panel>
+            <li><a href="../index.html" data-nav-link="home">ホーム</a></li>
+            <li><a href="roadmap.html" data-nav-link="roadmap">学習ロードマップ</a></li>
+            <li><a href="roadmap.html#lesson-list" data-nav-link="lessons">レッスン一覧</a></li>
+            <li><a href="glossary.html" data-nav-link="glossary">用語集</a></li>
+            <li><a href="faq.html" data-nav-link="faq">FAQ</a></li>
+            <li><a href="text.html" class="nav-cta" data-nav-link="start">学習を始める</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container lesson-shell">
+        <article class="lesson-main">
+          <section class="panel lesson-header fade-up" id="lesson-intro">
+            <span class="badge">Text</span>
+            <h1>Textで情報の階層を作る</h1>
+            <p>
+              Textは「文字を表示するだけ」のビューではありません。
+              フォント、太さ、行数、色、余白を組み合わせることで、画面の読みやすさと意味の優先順位を決めます。
+            </p>
+          </section>
+
+          <section class="panel lesson-section fade-up" id="basic-syntax">
+            <div class="section-title">
+              <h2>1. 基本文法（最小コード）</h2>
+              <span class="badge">Basic</span>
+            </div>
+            <div class="card flow">
+              <p>まずは最小形です。文字列を表示するだけなら1行で書けます。</p>
+              <pre><code><span class="kwd">Text</span>(<span class="str">"こんにちは SwiftUI"</span>)</code></pre>
+              <p class="text-muted">ここから `.font` や `.foregroundStyle` を積み上げて、情報の優先度を作ります。</p>
+            </div>
+          </section>
+
+          <section class="panel lesson-section fade-up" id="complete-sample">
+            <div class="section-title">
+              <h2>2. 完成コード例（初心者向け）</h2>
+              <span class="badge">Code Lab</span>
+            </div>
+            <div class="code-lab">
+              <div class="code-switch" role="group" aria-label="Textのコードレベル切替">
+                <button type="button" data-code-switch="basic">Basic</button>
+                <button type="button" data-code-switch="intermediate">Intermediate</button>
+              </div>
+              <article class="card flow" data-code-level="basic">
+                <h3>Basic: 見出しと補足文を並べる</h3>
+                <pre><code><span class="kwd">VStack</span>(alignment: .leading, spacing: 8) {
+  <span class="kwd">Text</span>(<span class="str">"今日の学習"</span>)
+    .font(.title3)
+    .fontWeight(.bold)
+
+  <span class="kwd">Text</span>(<span class="str">"Textとpaddingの使い分けを練習する"</span>)
+    .font(.body)
+    .foregroundStyle(.secondary)
+}
+.padding()</code></pre>
+              </article>
+              <article class="card flow" data-code-level="intermediate" hidden>
+                <h3>Intermediate: 行数制御とアクセシビリティを考慮</h3>
+                <pre><code><span class="kwd">VStack</span>(alignment: .leading, spacing: 10) {
+  <span class="kwd">Text</span>(headline)
+    .font(.system(.title3, design: .rounded, weight: .bold))
+    .lineLimit(2)
+    .minimumScaleFactor(0.85)
+
+  <span class="kwd">Text</span>(summary)
+    .font(.subheadline)
+    .foregroundStyle(.secondary)
+    .lineSpacing(4)
+    .accessibilityLabel(<span class="str">"概要: \(summary)"</span>)
+}
+.padding(16)
+.background(.thinMaterial, in: RoundedRectangle(cornerRadius: 14))</code></pre>
+              </article>
+            </div>
+          </section>
+
+          <section class="panel lesson-section fade-up" id="intermediate-step">
+            <div class="section-title">
+              <h2>3. 発展コードの読み方（中級入口）</h2>
+              <span class="badge">ポイント</span>
+            </div>
+            <div class="two-col">
+              <article class="card flow">
+                <h3>lineLimit + minimumScaleFactor</h3>
+                <p>デバイス幅が狭いとき、タイトルが切れすぎないよう調整できます。</p>
+              </article>
+              <article class="card flow">
+                <h3>lineSpacing</h3>
+                <p>説明文が2行以上になる場合、視線移動が楽になります。</p>
+              </article>
+            </div>
+            <p class="callout">中級者向けの第一歩は「見た目」だけでなく「情報の読み取りやすさ」も設計することです。</p>
+          </section>
+
+          <section class="panel lesson-section fade-up" id="pitfalls">
+            <div class="section-title">
+              <h2>4. つまずきやすいポイント</h2>
+              <span class="badge">アンチパターン</span>
+            </div>
+            <ul class="warning-list">
+              <li>フォントサイズを固定値だけで運用し、Dynamic Typeを考慮しない。</li>
+              <li>強調色を多用して重要度の差が消える。</li>
+              <li>長文Textを1ブロックにまとめ、段落分割しない。</li>
+            </ul>
+          </section>
+
+          <section class="panel lesson-section fade-up" id="checklist">
+            <div class="section-title">
+              <h2>5. まとめチェックリスト</h2>
+              <span class="badge">確認</span>
+            </div>
+            <ul class="checklist">
+              <li>Textに役割ごとのスタイル（見出し/本文/補足）を適用できる。</li>
+              <li>行数が増えた場合も読みやすさを保つ設定ができる。</li>
+              <li>BasicとIntermediateの違いを説明できる。</li>
+            </ul>
+          </section>
+
+          <section class="panel lesson-section fade-up" id="next">
+            <div class="section-title">
+              <h2>6. 次のページ</h2>
+              <span class="badge">Prev / Next</span>
+            </div>
+            <nav class="lesson-nav" aria-label="前後ページ">
+              <a href="roadmap.html"><strong>← 学習ロードマップ</strong><span class="text-muted">全体の流れに戻る</span></a>
+              <a href="vstack.html"><strong>VStack →</strong><span class="text-muted">縦方向レイアウトへ進む</span></a>
+            </nav>
+          </section>
+        </article>
+
+        <aside class="lesson-toc">
+          <nav class="toc" aria-label="このページの目次">
+            <h2>目次</h2>
+            <ul>
+              <li><a href="#lesson-intro" data-toc-link>導入</a></li>
+              <li><a href="#basic-syntax" data-toc-link>基本文法</a></li>
+              <li><a href="#complete-sample" data-toc-link>完成コード</a></li>
+              <li><a href="#intermediate-step" data-toc-link>発展ポイント</a></li>
+              <li><a href="#pitfalls" data-toc-link>つまずき</a></li>
+              <li><a href="#checklist" data-toc-link>まとめ</a></li>
+              <li><a href="#next" data-toc-link>次ページ</a></li>
+            </ul>
+          </nav>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container flow">
+        <small>© SwiftUI Layout Lab</small>
+      </div>
+    </footer>
+  </body>
+</html>

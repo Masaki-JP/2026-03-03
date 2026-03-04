@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ | SwiftUI Layout Lab</title>
+    <meta name="description" content="SwiftUIレイアウト学習サイトのFAQ。初心者から中級者へ進む際の疑問に回答。" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
+    <script src="../js/main.js" defer></script>
+    <script src="../js/code-switcher.js" defer></script>
+    <script src="../js/glossary-filter.js" defer></script>
+  </head>
+  <body data-page="faq">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html">SwiftUI Layout Lab</a>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="global-nav">メニュー</button>
+        <nav class="site-nav" aria-label="主要ナビゲーション">
+          <ul id="global-nav" class="site-nav-list" data-menu-panel>
+            <li><a href="../index.html" data-nav-link="home">ホーム</a></li>
+            <li><a href="roadmap.html" data-nav-link="roadmap">学習ロードマップ</a></li>
+            <li><a href="roadmap.html#lesson-list" data-nav-link="lessons">レッスン一覧</a></li>
+            <li><a href="glossary.html" data-nav-link="glossary">用語集</a></li>
+            <li><a href="faq.html" data-nav-link="faq">FAQ</a></li>
+            <li><a href="text.html" class="nav-cta" data-nav-link="start">学習を始める</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="container flow">
+        <section class="panel lesson-header fade-up">
+          <span class="badge">FAQ</span>
+          <h1>よくある質問</h1>
+          <p>初心者から中級者へ移行する際に多い疑問をまとめました。</p>
+        </section>
+
+        <section class="panel fade-up">
+          <details>
+            <summary>初心者でも中級向けコードを読むべきですか？</summary>
+            <p>まずBasicを理解してからIntermediateを読みます。違いを比較することで設計意図が見えてきます。</p>
+          </details>
+          <details>
+            <summary>どのページから読むのが効率的ですか？</summary>
+            <p>推奨は `Text → VStack → padding → overlay → Image → Stacks → Spacer/Frame → Button` です。</p>
+          </details>
+          <details>
+            <summary>レイアウトが崩れたときの確認順は？</summary>
+            <p>1) 親コンテナのStack構造 2) frame指定 3) padding順序 4) overlay/clip の順で確認してください。</p>
+          </details>
+          <details>
+            <summary>JavaScriptを無効にするとどうなりますか？</summary>
+            <p>コード切替や用語検索は無効になりますが、Basicの本文はそのまま読めます。</p>
+          </details>
+          <details>
+            <summary>このサイトだけで状態管理まで学べますか？</summary>
+            <p>本サイトはUIレイアウト中心です。状態管理は次段階として `@State` / `@Binding` を別教材で補完してください。</p>
+          </details>
+        </section>
+
+        <section class="panel fade-up flow">
+          <div class="section-title"><h2>関連ページ</h2><span class="badge">Links</span></div>
+          <div class="grid-3">
+            <a class="inline-link-card" href="roadmap.html">学習ロードマップ</a>
+            <a class="inline-link-card" href="glossary.html">用語集</a>
+            <a class="inline-link-card" href="../index.html#contact">問い合わせ（デモ）</a>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="site-footer"><div class="container flow"><small>© SwiftUI Layout Lab</small></div></footer>
+  </body>
+</html>

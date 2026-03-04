@@ -1,0 +1,156 @@
+.hero-visual {
+  border: 1px solid rgba(191, 211, 225, 0.82);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.95), rgba(216, 237, 244, 0.9));
+  box-shadow: var(--shadow-md);
+  padding: 16px;
+}
+
+.hero-visual figcaption {
+  margin-top: 8px;
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+}
+
+.level-bands {
+  display: grid;
+  gap: 10px;
+}
+
+@media (min-width: 48rem) {
+  .level-bands {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.level-bands .card {
+  border-top: 4px solid var(--brand);
+}
+
+.topic-list {
+  display: grid;
+  gap: 10px;
+}
+
+@media (min-width: 48rem) {
+  .topic-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 75rem) {
+  .topic-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.topic-list .card {
+  display: grid;
+  gap: 10px;
+}
+
+.topic-list .card p {
+  color: var(--ink-soft);
+}
+
+.legacy-grid {
+  display: grid;
+  gap: 10px;
+}
+
+@media (min-width: 48rem) {
+  .legacy-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.roadmap-track {
+  display: grid;
+  gap: 10px;
+}
+
+.roadmap-track .card {
+  border-left: 5px solid var(--brand);
+}
+
+.note-slab {
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.74);
+  padding: 10px 12px;
+}
+
+.lesson-header {
+  display: grid;
+  gap: 8px;
+}
+
+.lesson-header p {
+  color: var(--ink-soft);
+}
+
+.lesson-section {
+  scroll-margin-top: 102px;
+}
+
+.lesson-section h2 {
+  margin-bottom: 8px;
+}
+
+.lesson-section .card + .card {
+  margin-top: 10px;
+}
+
+.figure-wrap {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: #fff;
+  padding: 10px;
+}
+
+.figure-wrap figcaption {
+  margin-top: 8px;
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+}
+
+.quiz-box {
+  display: grid;
+  gap: 10px;
+}
+
+.quiz-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.quiz-options button {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  padding: 8px 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.quiz-options button:hover {
+  border-color: var(--brand);
+}
+
+.quiz-result {
+  min-height: 1.4em;
+  font-weight: 700;
+  color: var(--good);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footer-links a {
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+}
