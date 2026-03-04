@@ -1,4 +1,4 @@
-# SwiftUI Layout Lab
+# Code EJ
 
 初心者から中級者へ向けて、SwiftUIのUIレイアウトを段階学習できる静的サイトです。
 
