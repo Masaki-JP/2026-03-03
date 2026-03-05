@@ -3,15 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Account | Code EJ</title>
-    <meta name="description" content="学習サービス向けの静的アカウントページ。" />
+    <title>問い合わせ | Code EJ</title>
+    <meta name="description" content="Code EJへの問い合わせページ。学習内容への質問やサイト改善要望を受け付けています。" />
     <link rel="stylesheet" href="../css/base.css" />
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/components.css" />
     <link rel="stylesheet" href="../css/pages.css" />
     <script src="../js/main.js" defer></script>
+    <script src="../js/code-switcher.js" defer></script>
+    <script src="../js/glossary-filter.js" defer></script>
   </head>
-  <body data-page="account">
+  <body data-page="contact">
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="../index.html">Code EJ</a>
@@ -25,38 +27,42 @@
         </nav>
       </div>
     </header>
-
     <main>
       <div class="container flow">
         <section class="panel lesson-header fade-up">
-          <span class="badge">Account</span>
-          <h1>アカウント</h1>
-          <p>このページは静的デモです。プロフィールや学習進捗の見え方を確認できます。</p>
+          <span class="badge">Contact</span>
+          <h1>問い合わせ</h1>
+          <p>ご質問・改善提案などを受け付けています。以下のフォームは静的デモです。</p>
         </section>
 
-        <section class="panel fade-up two-col">
-          <article class="card flow">
-            <h2>プロフィール</h2>
-            <p><strong>名前:</strong> 山田 花子</p>
-            <p><strong>メール:</strong> hanako@example.com</p>
-            <p><strong>プラン:</strong> Free</p>
-            <a class="button-ghost" href="#">プロフィールを編集（デモ）</a>
-          </article>
-          <article class="card flow">
-            <h2>学習進捗</h2>
-            <p><strong>完了レッスン:</strong> 8 / 12</p>
-            <p><strong>連続学習日数:</strong> 14日</p>
-            <p><strong>次の推奨:</strong> overlay 応用編</p>
-            <a class="button-primary" href="roadmap.html">学習を再開</a>
-          </article>
+        <section class="panel fade-up">
+          <form>
+            <label>
+              お名前
+              <input type="text" placeholder="例: 山田 花子" />
+            </label>
+            <label>
+              メールアドレス
+              <input type="email" placeholder="you@example.com" />
+            </label>
+            <label>
+              件名
+              <input type="text" placeholder="例: overlayの記事について" />
+            </label>
+            <label>
+              メッセージ
+              <textarea rows="5" placeholder="ご意見・ご要望"></textarea>
+            </label>
+            <button class="button-primary" type="button">送信（デモ）</button>
+          </form>
         </section>
 
         <section class="panel fade-up flow">
-          <div class="section-title"><h2>アカウント設定</h2><span class="badge">Static</span></div>
+          <div class="section-title"><h2>関連ページ</h2><span class="badge">Links</span></div>
           <div class="grid-3">
-            <article class="card"><h3>通知設定</h3><p>メール通知: ON</p></article>
-            <article class="card"><h3>表示設定</h3><p>テーマ: Light</p></article>
-            <article class="card"><h3>セキュリティ</h3><p>2段階認証: OFF</p></article>
+            <a class="inline-link-card" href="faq.html">FAQ</a>
+            <a class="inline-link-card" href="roadmap.html">学習ロードマップ</a>
+            <a class="inline-link-card" href="../index.html">トップページ</a>
           </div>
         </section>
       </div>
