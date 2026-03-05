@@ -8,7 +8,6 @@
         <ul class="footer-links">
           <li><a href="${prefix}roadmap.html">学習ロードマップ</a></li>
           <li><a href="${prefix}roadmap.html#lesson-list">レッスン一覧</a></li>
-          <li><a href="${prefix}glossary.html">用語集</a></li>
           <li><a href="${prefix}contact.html">問い合わせ</a></li>
           <li><a href="${prefix}text.html">学習を始める</a></li>
         </ul>
