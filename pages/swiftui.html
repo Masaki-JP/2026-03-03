@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SwiftUI一覧 | Code EJ</title>
+    <meta name="description" content="SwiftUIの基本ビュー15個と基本モディファイア30個を名前順で一覧表示。" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
+    <script src="../js/main.js" defer></script>
+  </head>
+  <body data-page="swiftui">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html">Code EJ</a>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="global-nav">メニュー</button>
+        <nav class="site-nav" aria-label="主要ナビゲーション">
+          <ul id="global-nav" class="site-nav-list" data-menu-panel>
+            <li><a href="swiftui.html" data-nav-link="swiftui">SwiftUI</a></li>
+            <li><a href="favorite.html" data-nav-link="favorites">Favorite</a></li>
+            <li><a href="account.html" data-nav-link="account">Account</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container flow">
+        <section class="panel lesson-header fade-up">
+          <span class="badge">SwiftUI</span>
+          <h1>基本ビュー & 基本モディファイア一覧</h1>
+          <p>初心者が最初に覚えると実装しやすくなる要素を、名前順でまとめました。</p>
+        </section>
+
+        <section class="panel fade-up flow">
+          <div class="section-title"><h2>基本ビュー15個（A-Z）</h2><span class="badge">15 Views</span></div>
+          <div class="grid-3">
+            <article class="card"><h3>AsyncImage</h3><p>URLから画像を非同期で表示。</p></article>
+            <article class="card"><h3>Button</h3><p>タップ操作を受け取る。</p></article>
+            <article class="card"><h3>Color</h3><p>単色の背景や塗りに利用。</p></article>
+            <article class="card"><h3>DatePicker</h3><p>日付・時刻の入力UI。</p></article>
+            <article class="card"><h3>Divider</h3><p>区切り線を表示。</p></article>
+            <article class="card"><h3>Form</h3><p>入力フォームをまとめるコンテナ。</p></article>
+            <article class="card"><h3>HStack</h3><p>横方向にビューを並べる。</p></article>
+            <article class="card"><h3>Image</h3><p>アセット画像やSF Symbolsを表示。</p></article>
+            <article class="card"><h3>Label</h3><p>アイコンとテキストをセット表示。</p></article>
+            <article class="card"><h3>List</h3><p>縦スクロールのリスト表示。</p></article>
+            <article class="card"><h3>NavigationStack</h3><p>画面遷移の土台。</p></article>
+            <article class="card"><h3>ProgressView</h3><p>進捗や読み込み状態を表示。</p></article>
+            <article class="card"><h3>Spacer</h3><p>余白を伸縮させて配置調整。</p></article>
+            <article class="card"><h3>Text</h3><p>文字列を表示。</p></article>
+            <article class="card"><h3>VStack</h3><p>縦方向にビューを並べる。</p></article>
+          </div>
+        </section>
+
+        <section class="panel fade-up flow">
+          <div class="section-title"><h2>基本モディファイア30個（A-Z）</h2><span class="badge">30 Modifiers</span></div>
+          <div class="grid-3">
+            <article class="card"><h3>accessibilityLabel(_:)</h3></article>
+            <article class="card"><h3>background(_:)</h3></article>
+            <article class="card"><h3>badge(_:)</h3></article>
+            <article class="card"><h3>bold()</h3></article>
+            <article class="card"><h3>border(_:width:)</h3></article>
+            <article class="card"><h3>buttonStyle(_:)</h3></article>
+            <article class="card"><h3>clipShape(_:)</h3></article>
+            <article class="card"><h3>cornerRadius(_:)</h3></article>
+            <article class="card"><h3>font(_:)</h3></article>
+            <article class="card"><h3>fontWeight(_:)</h3></article>
+            <article class="card"><h3>foregroundStyle(_:)</h3></article>
+            <article class="card"><h3>frame(width:height:)</h3></article>
+            <article class="card"><h3>frame(maxWidth:alignment:)</h3></article>
+            <article class="card"><h3>hidden()</h3></article>
+            <article class="card"><h3>ignoresSafeArea()</h3></article>
+            <article class="card"><h3>kerning(_:)</h3></article>
+            <article class="card"><h3>lineLimit(_:)</h3></article>
+            <article class="card"><h3>lineSpacing(_:)</h3></article>
+            <article class="card"><h3>minimumScaleFactor(_:)</h3></article>
+            <article class="card"><h3>multilineTextAlignment(_:)</h3></article>
+            <article class="card"><h3>offset(x:y:)</h3></article>
+            <article class="card"><h3>onAppear(perform:)</h3></article>
+            <article class="card"><h3>opacity(_:)</h3></article>
+            <article class="card"><h3>overlay(_:alignment:)</h3></article>
+            <article class="card"><h3>padding(_:)</h3></article>
+            <article class="card"><h3>position(x:y:)</h3></article>
+            <article class="card"><h3>rotationEffect(_:)</h3></article>
+            <article class="card"><h3>scaleEffect(_:)</h3></article>
+            <article class="card"><h3>shadow(color:radius:x:y:)</h3></article>
+            <article class="card"><h3>task(priority:_:)</h3></article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer"><div class="container flow"><small>© Code EJ</small></div></footer>
+  </body>
+</html>

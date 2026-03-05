@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favorite | Code EJ</title>
+    <meta name="description" content="SwiftUI一覧からピックアップしたお気に入り5項目。" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
+    <script src="../js/main.js" defer></script>
+  </head>
+  <body data-page="favorites">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html">Code EJ</a>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="global-nav">メニュー</button>
+        <nav class="site-nav" aria-label="主要ナビゲーション">
+          <ul id="global-nav" class="site-nav-list" data-menu-panel>
+            <li><a href="swiftui.html" data-nav-link="swiftui">SwiftUI</a></li>
+            <li><a href="favorite.html" data-nav-link="favorites">Favorite</a></li>
+            <li><a href="account.html" data-nav-link="account">Account</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container flow">
+        <section class="panel lesson-header fade-up">
+          <span class="badge">Favorite</span>
+          <h1>よく使う5つの要素</h1>
+          <p>SwiftUI一覧から、実務でも使いやすい5項目を選んで掲載しています。</p>
+        </section>
+        <section class="panel fade-up">
+          <div class="grid-2">
+            <article class="card flow"><h2>Text</h2><p>UIの情報設計の中心。見出し・本文・補足の階層づけに必須。</p></article>
+            <article class="card flow"><h2>VStack</h2><p>画面を縦方向に組む基本。多くの画面の土台になるレイアウト。</p></article>
+            <article class="card flow"><h2>padding(_:)</h2><p>余白を追加して見やすさを向上。読みやすいUIに直結。</p></article>
+            <article class="card flow"><h2>overlay(_:alignment:)</h2><p>バッジ、境界、状態表示などの重ね合わせに便利。</p></article>
+            <article class="card flow"><h2>shadow(color:radius:x:y:)</h2><p>カードやボタンに奥行きを付け、視線誘導を補助。</p></article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer"><div class="container flow"><small>© Code EJ</small></div></footer>
+  </body>
+</html>

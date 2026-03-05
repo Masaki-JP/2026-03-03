@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account | Code EJ</title>
+    <meta name="description" content="学習サービス向けの静的アカウントページ。" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
+    <script src="../js/main.js" defer></script>
+  </head>
+  <body data-page="account">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../index.html">Code EJ</a>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="global-nav">メニュー</button>
+        <nav class="site-nav" aria-label="主要ナビゲーション">
+          <ul id="global-nav" class="site-nav-list" data-menu-panel>
+            <li><a href="swiftui.html" data-nav-link="swiftui">SwiftUI</a></li>
+            <li><a href="favorite.html" data-nav-link="favorites">Favorite</a></li>
+            <li><a href="account.html" data-nav-link="account">Account</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container flow">
+        <section class="panel lesson-header fade-up">
+          <span class="badge">Account</span>
+          <h1>アカウント</h1>
+          <p>このページは静的デモです。プロフィールや学習進捗の見え方を確認できます。</p>
+        </section>
+
+        <section class="panel fade-up two-col">
+          <article class="card flow">
+            <h2>プロフィール</h2>
+            <p><strong>名前:</strong> 山田 花子</p>
+            <p><strong>メール:</strong> hanako@example.com</p>
+            <p><strong>プラン:</strong> Free</p>
+            <a class="button-ghost" href="#">プロフィールを編集（デモ）</a>
+          </article>
+          <article class="card flow">
+            <h2>学習進捗</h2>
+            <p><strong>完了レッスン:</strong> 8 / 12</p>
+            <p><strong>連続学習日数:</strong> 14日</p>
+            <p><strong>次の推奨:</strong> overlay 応用編</p>
+            <a class="button-primary" href="roadmap.html">学習を再開</a>
+          </article>
+        </section>
+
+        <section class="panel fade-up flow">
+          <div class="section-title"><h2>アカウント設定</h2><span class="badge">Static</span></div>
+          <div class="grid-3">
+            <article class="card"><h3>通知設定</h3><p>メール通知: ON</p></article>
+            <article class="card"><h3>表示設定</h3><p>テーマ: Light</p></article>
+            <article class="card"><h3>セキュリティ</h3><p>2段階認証: OFF</p></article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer"><div class="container flow"><small>© Code EJ</small></div></footer>
+  </body>
+</html>
