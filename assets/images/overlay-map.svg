@@ -5,11 +5,11 @@
   <rect x="116" y="86" width="568" height="348" rx="24" fill="#FFFFFF" stroke="#0F6278" stroke-width="3"/>
   <rect x="136" y="106" width="122" height="42" rx="21" fill="#0F6278"/>
   <rect x="542" y="106" width="122" height="42" rx="21" fill="#0F6278"/>
-  <rect x="136" y="372" width="122" height="42" rx="21" fill="#CC8B2D"/>
-  <rect x="542" y="372" width="122" height="42" rx="21" fill="#CC8B2D"/>
+  <rect x="136" y="372" width="150" height="42" rx="21" fill="#CC8B2D"/>
+  <rect x="514" y="372" width="150" height="42" rx="21" fill="#CC8B2D"/>
   <text x="152" y="133" fill="#FFFFFF" font-family="Avenir Next, sans-serif" font-size="18" font-weight="700">topLeading</text>
   <text x="560" y="133" fill="#FFFFFF" font-family="Avenir Next, sans-serif" font-size="18" font-weight="700">topTrailing</text>
-  <text x="152" y="399" fill="#10263D" font-family="Avenir Next, sans-serif" font-size="18" font-weight="700">bottomLeading</text>
-  <text x="554" y="399" fill="#10263D" font-family="Avenir Next, sans-serif" font-size="18" font-weight="700">bottomTrailing</text>
+  <text x="148" y="399" fill="#10263D" font-family="Avenir Next, sans-serif" font-size="18" font-weight="700">bottomLeading</text>
+  <text x="526" y="399" fill="#10263D" font-family="Avenir Next, sans-serif" font-size="18" font-weight="700">bottomTrailing</text>
   <text x="255" y="262" fill="#3A5570" font-family="Avenir Next, sans-serif" font-size="34" font-weight="700">overlay(alignment:)</text>
 </svg>
