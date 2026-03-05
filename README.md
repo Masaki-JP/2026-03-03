@@ -19,7 +19,6 @@
 - `pages/spacer-frame.html`
 - `pages/button.html`
 - `pages/glossary.html`
-- `pages/faq.html`
 
 ## ディレクトリ
 - `css/` : `base.css`, `layout.css`, `components.css`, `pages.css`
