@@ -158,3 +158,13 @@
   color: var(--ink-soft);
   font-size: 0.84rem;
 }
+
+.swiftui-search {
+  display: grid;
+  gap: 8px;
+}
+
+.swiftui-search label {
+  font-weight: 700;
+  color: var(--ink);
+}
