@@ -1,0 +1,21 @@
+<svg width="640" height="360" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-quiz" x1="28" y1="22" x2="588" y2="334" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#EC4899"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" rx="36" fill="url(#bg-quiz)"/>
+  <circle cx="520" cy="78" r="38" fill="#DDD6FE" fill-opacity="0.9"/>
+  <rect x="96" y="62" width="448" height="236" rx="30" fill="#fff" fill-opacity="0.95"/>
+  <circle cx="178" cy="126" r="34" fill="#6366F1"/>
+  <rect x="230" y="106" width="266" height="16" rx="8" fill="#C4B5FD"/>
+  <rect x="230" y="134" width="202" height="12" rx="6" fill="#DDD6FE"/>
+  <rect x="132" y="172" width="376" height="28" rx="14" fill="#EEF2FF"/>
+  <circle cx="156" cy="186" r="7" fill="#6366F1"/>
+  <rect x="174" y="180" width="192" height="12" rx="6" fill="#C4B5FD"/>
+  <rect x="132" y="212" width="376" height="28" rx="14" fill="#ECFDF3"/>
+  <circle cx="156" cy="226" r="7" fill="#22C55E"/>
+  <rect x="174" y="220" width="226" height="12" rx="6" fill="#86EFAC"/>
+  <rect x="132" y="254" width="164" height="16" rx="8" fill="#F9A8D4"/>
+</svg>
