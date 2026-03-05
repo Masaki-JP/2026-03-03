@@ -13,6 +13,7 @@
         <nav class="site-nav" aria-label="主要ナビゲーション">
           <ul id="global-nav" class="site-nav-list" data-menu-panel>
             <li><a href="${pagesPrefix}swiftui.html" data-nav-link="swiftui">SwiftUI</a></li>
+            <li><a href="${pagesPrefix}course.html" data-nav-link="course">Course</a></li>
             <li><a href="${pagesPrefix}favorite.html" data-nav-link="favorites">Favorite</a></li>
             <li><a href="${pagesPrefix}account.html" data-nav-link="account">Account</a></li>
           </ul>
