@@ -1,3 +1,9 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
   width: min(var(--max), 92vw);
   margin: 0 auto;
@@ -151,6 +157,7 @@ body.js-enabled.menu-open .site-nav-list {
 }
 
 main {
+  flex: 1;
   padding: 26px 0 44px;
 }
 
