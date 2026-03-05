@@ -1,4 +1,22 @@
 (() => {
+  const sharedFooter = document.querySelector("[data-shared-footer]");
+  if (sharedFooter) {
+    const isPagesPath = window.location.pathname.includes("/pages/");
+    const prefix = isPagesPath ? "" : "pages/";
+    sharedFooter.innerHTML = `
+      <div class="container flow">
+        <ul class="footer-links">
+          <li><a href="${prefix}roadmap.html">学習ロードマップ</a></li>
+          <li><a href="${prefix}roadmap.html#lesson-list">レッスン一覧</a></li>
+          <li><a href="${prefix}glossary.html">用語集</a></li>
+          <li><a href="${prefix}contact.html">問い合わせ</a></li>
+          <li><a href="${prefix}text.html">学習を始める</a></li>
+        </ul>
+        <small>© Code EJ</small>
+      </div>
+    `;
+  }
+
   const body = document.body;
   body.classList.add("js-enabled");
   const currentPage = body.dataset.page;
