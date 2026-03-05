@@ -4,42 +4,59 @@
     return;
   }
 
-  const sections = [...document.querySelectorAll("[data-swiftui-section]")];
-  const cards = [...document.querySelectorAll("[data-swiftui-section] .card-link")];
+  const viewsGrid = document.querySelector('[data-swiftui-grid="views"]');
+  const modifiersGrid = document.querySelector('[data-swiftui-grid="modifiers"]');
+  if (!viewsGrid || !modifiersGrid) {
+    return;
+  }
+
   const emptyState = document.querySelector("[data-swiftui-empty]");
   const status = document.querySelector("[data-swiftui-search-status]");
 
-  const searchable = cards.map((card) => {
-    const title = card.querySelector("h3")?.textContent ?? "";
-    const description = card.querySelector("p")?.textContent ?? "";
-    const slug = card.getAttribute("href") ?? "";
-    const text = `${title} ${description} ${slug}`.toLowerCase();
-    return { card, text };
-  });
+  const viewsCards = [...viewsGrid.querySelectorAll(".card-link")];
+  const modifierCards = [...modifiersGrid.querySelectorAll(".card-link")];
+
+  const createSearchableItems = (cards) =>
+    cards.map((card) => {
+      const title = card.querySelector("h3")?.textContent ?? "";
+      const description = card.querySelector("p")?.textContent ?? "";
+      const slug = card.getAttribute("href") ?? "";
+      const text = `${title} ${description} ${slug}`.toLowerCase();
+      return { card, text };
+    });
+
+  const searchableViews = createSearchableItems(viewsCards);
+  const searchableModifiers = createSearchableItems(modifierCards);
+
+  const findMatches = (items, query) => {
+    if (!query) {
+      return items;
+    }
+    return items.filter((item) => item.text.includes(query));
+  };
+
+  const renderCards = (grid, items) => {
+    const nextCards = items.map((item) => item.card.cloneNode(true));
+    grid.replaceChildren(...nextCards);
+  };
 
   const update = () => {
     const query = searchInput.value.trim().toLowerCase();
-    let visibleCount = 0;
 
-    searchable.forEach((item) => {
-      const isMatch = query.length === 0 || item.text.includes(query);
-      item.card.hidden = !isMatch;
-      if (isMatch) {
-        visibleCount += 1;
-      }
-    });
+    const matchedViews = findMatches(searchableViews, query);
+    const matchedModifiers = findMatches(searchableModifiers, query);
 
-    sections.forEach((section) => {
-      const visibleCards = section.querySelectorAll(".card-link:not([hidden])");
-      section.hidden = visibleCards.length === 0;
-    });
+    renderCards(viewsGrid, matchedViews);
+    renderCards(modifiersGrid, matchedModifiers);
+
+    const visibleCount = matchedViews.length + matchedModifiers.length;
 
     if (emptyState) {
       emptyState.hidden = visibleCount > 0;
     }
 
     if (status) {
-      status.textContent = `${visibleCount}件を表示中です。`;
+      status.textContent = `Basic Views: ${matchedViews.length}件 / Basic Modifiers: ${matchedModifiers.length}件`;
     }
   };
 
