@@ -1,7 +1,28 @@
 (() => {
+  const isPagesPath = window.location.pathname.includes("/pages/");
+  const sharedHeader = document.querySelector("[data-shared-header]");
+  if (sharedHeader) {
+    const pagesPrefix = isPagesPath ? "" : "pages/";
+    const homeHref = isPagesPath ? "../index.html" : "index.html";
+    sharedHeader.innerHTML = `
+      <div class="container header-inner">
+        <a class="brand" href="${homeHref}">Code EJ</a>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="global-nav">
+          メニュー
+        </button>
+        <nav class="site-nav" aria-label="主要ナビゲーション">
+          <ul id="global-nav" class="site-nav-list" data-menu-panel>
+            <li><a href="${pagesPrefix}swiftui.html" data-nav-link="swiftui">SwiftUI</a></li>
+            <li><a href="${pagesPrefix}favorite.html" data-nav-link="favorites">Favorite</a></li>
+            <li><a href="${pagesPrefix}account.html" data-nav-link="account">Account</a></li>
+          </ul>
+        </nav>
+      </div>
+    `;
+  }
+
   const sharedFooter = document.querySelector("[data-shared-footer]");
   if (sharedFooter) {
-    const isPagesPath = window.location.pathname.includes("/pages/");
     const prefix = isPagesPath ? "" : "pages/";
     sharedFooter.innerHTML = `
       <div class="container flow">
