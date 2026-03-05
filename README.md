@@ -18,11 +18,10 @@
 - `pages/stacks.html`
 - `pages/spacer-frame.html`
 - `pages/button.html`
-- `pages/glossary.html`
 
 ## ディレクトリ
 - `css/` : `base.css`, `layout.css`, `components.css`, `pages.css`
-- `js/` : `main.js`, `code-switcher.js`, `glossary-filter.js`
+- `js/` : `main.js`, `code-switcher.js`
 - `assets/images/` : 学習補助図版
 
 ## 互換性
