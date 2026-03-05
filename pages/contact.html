@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FAQ | Code EJ</title>
-    <meta name="description" content="SwiftUIレイアウト学習サイトのFAQ。初心者から中級者へ進む際の疑問に回答。" />
+    <title>問い合わせ | Code EJ</title>
+    <meta name="description" content="Code EJへの問い合わせページ。学習内容への質問やサイト改善要望を受け付けています。" />
     <link rel="stylesheet" href="../css/base.css" />
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/components.css" />
@@ -13,7 +13,7 @@
     <script src="../js/code-switcher.js" defer></script>
     <script src="../js/glossary-filter.js" defer></script>
   </head>
-  <body data-page="faq">
+  <body data-page="contact">
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="../index.html">Code EJ</a>
@@ -30,41 +30,39 @@
     <main>
       <div class="container flow">
         <section class="panel lesson-header fade-up">
-          <span class="badge">FAQ</span>
-          <h1>よくある質問</h1>
-          <p>初心者から中級者へ移行する際に多い疑問をまとめました。</p>
+          <span class="badge">Contact</span>
+          <h1>問い合わせ</h1>
+          <p>ご質問・改善提案などを受け付けています。以下のフォームは静的デモです。</p>
         </section>
 
         <section class="panel fade-up">
-          <details>
-            <summary>初心者でも中級向けコードを読むべきですか？</summary>
-            <p>まずBasicを理解してからIntermediateを読みます。違いを比較することで設計意図が見えてきます。</p>
-          </details>
-          <details>
-            <summary>どのページから読むのが効率的ですか？</summary>
-            <p>推奨は `Text → VStack → padding → overlay → Image → Stacks → Spacer/Frame → Button` です。</p>
-          </details>
-          <details>
-            <summary>レイアウトが崩れたときの確認順は？</summary>
-            <p>1) 親コンテナのStack構造 2) frame指定 3) padding順序 4) overlay/clip の順で確認してください。</p>
-          </details>
-          <details>
-            <summary>JavaScriptを無効にするとどうなりますか？</summary>
-            <p>コード切替や用語検索は無効になりますが、Basicの本文はそのまま読めます。</p>
-          </details>
-          <details>
-            <summary>このサイトだけで状態管理まで学べますか？</summary>
-            <p>本サイトはUIレイアウト中心です。状態管理は次段階として `@State` / `@Binding` を別教材で補完してください。</p>
-          </details>
+          <form>
+            <label>
+              お名前
+              <input type="text" placeholder="例: 山田 花子" />
+            </label>
+            <label>
+              メールアドレス
+              <input type="email" placeholder="you@example.com" />
+            </label>
+            <label>
+              件名
+              <input type="text" placeholder="例: overlayの記事について" />
+            </label>
+            <label>
+              メッセージ
+              <textarea rows="5" placeholder="ご意見・ご要望"></textarea>
+            </label>
+            <button class="button-primary" type="button">送信（デモ）</button>
+          </form>
         </section>
-
 
         <section class="panel fade-up flow">
           <div class="section-title"><h2>関連ページ</h2><span class="badge">Links</span></div>
           <div class="grid-3">
+            <a class="inline-link-card" href="faq.html">FAQ</a>
             <a class="inline-link-card" href="roadmap.html">学習ロードマップ</a>
-            <a class="inline-link-card" href="glossary.html">用語集</a>
-            <a class="inline-link-card" href="contact.html">問い合わせ</a>
+            <a class="inline-link-card" href="../index.html">トップページ</a>
           </div>
         </section>
       </div>
