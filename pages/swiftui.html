@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/components.css" />
     <link rel="stylesheet" href="../css/pages.css" />
     <script src="../js/main.js" defer></script>
+    <script src="../js/swiftui.js" defer></script>
   </head>
   <body data-page="swiftui">
     <header class="site-header" data-shared-header></header>
@@ -22,8 +23,16 @@
         </section>
 
         <section class="panel fade-up flow">
+          <div class="swiftui-search">
+            <label for="swiftui-search-input">項目を検索</label>
+            <input id="swiftui-search-input" type="search" placeholder="例: button, padding, stack" data-swiftui-search-input />
+            <p class="text-muted" data-swiftui-search-status aria-live="polite">45件を表示中です。</p>
+          </div>
+        </section>
+
+        <section class="panel fade-up flow" data-swiftui-section="views">
           <div class="section-title"><h2>Basic Views</h2></div>
-          <div class="grid-3">
+          <div class="grid-3" data-swiftui-grid="views">
             <a class="card card-link" href="swiftui-detail.html?item=asyncimage" aria-label="AsyncImage の詳細ページへ"><h3>AsyncImage</h3><p>URLから画像を非同期で表示。</p></a>
             <a class="card card-link" href="swiftui-detail.html?item=button" aria-label="Button の詳細ページへ"><h3>Button</h3><p>タップ操作を受け取る。</p></a>
             <a class="card card-link" href="swiftui-detail.html?item=color" aria-label="Color の詳細ページへ"><h3>Color</h3><p>単色の背景や塗りに利用。</p></a>
@@ -42,9 +51,9 @@
           </div>
         </section>
 
-        <section class="panel fade-up flow">
+        <section class="panel fade-up flow" data-swiftui-section="modifiers">
           <div class="section-title"><h2>Basic Modifiers</h2></div>
-          <div class="grid-3">
+          <div class="grid-3" data-swiftui-grid="modifiers">
             <a class="card card-link" href="swiftui-detail.html?item=accessibilitylabel" aria-label="accessibilityLabel(_:) の詳細ページへ"><h3>accessibilityLabel(_:)</h3><p>VoiceOver用の読み上げ名を設定。</p></a>
             <a class="card card-link" href="swiftui-detail.html?item=background" aria-label="background(_:) の詳細ページへ"><h3>background(_:)</h3><p>ビューの背面に色や形を追加。</p></a>
             <a class="card card-link" href="swiftui-detail.html?item=badge" aria-label="badge(_:) の詳細ページへ"><h3>badge(_:)</h3><p>タブやリストに件数バッジを表示。</p></a>
@@ -77,6 +86,8 @@
             <a class="card card-link" href="swiftui-detail.html?item=task-priority" aria-label="task(priority:_:) の詳細ページへ"><h3>task(priority:_:)</h3><p>表示に合わせて非同期処理を開始。</p></a>
           </div>
         </section>
+
+        <p class="empty-state" data-swiftui-empty hidden>該当する項目がありません。別のキーワードで試してください。</p>
       </div>
     </main>
     <footer class="site-footer" data-shared-footer></footer>
